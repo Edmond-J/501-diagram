@@ -1,0 +1,25 @@
+*************************
+Rectangle 55.8 373.0 106.8 46.6 208 188 104 2 true 208 214 194
+Rectangle 55.8 449.0 106.8 46.6 208 188 104 2 true 208 214 194
+Rectangle 55.8 302.0 106.8 46.6 208 188 104 2 true 208 214 194
+Rectangle 55.8 219.0 106.8 46.6 208 188 104 2 true 208 214 194
+Line 168.0 242.0 254.0 243.0 127 127 127 2 true
+Line 166.0 322.0 247.0 326.0 127 127 127 2 true
+Line 170.0 398.0 260.0 400.0 127 127 127 2 true
+Line 169.0 468.0 258.0 470.0 127 127 127 2 true
+Word 58.0 521.0 65 55 127 15 “Our job is to love others without stopping
+Word 63.0 546.0 65 55 127 15 to inquire whether or not they are worthy.
+Word 64.0 573.0 65 55 127 15 That is not our business and, in fact, it is
+Word 63.0 599.0 65 55 127 15 nobody's business. What we are asked to
+Word 60.0 626.0 65 55 127 15 do is to love, and this love itself will render
+Word 64.0 624.0 65 55 127 15 
+Line 393.0 290.0 489.0 293.0 65 55 127 2 true
+Oval 265.0 110.0 123.0 403.0 127 127 127 2 true 127 163 163
+Word 292.0 309.0 200 127 127 25 GOAL
+Line 175.0 158.0 273.0 159.0 127 127 127 2 true
+Word 573.0 115.0 127 127 127 30 responsibility
+Table 502.0 151.0 10 4 285.0 340.0 2
+Word 361.0 622.0 65 55 127 20 ― Thomas Merton
+Word 63.0 111.0 127 127 127 25 Position
+Rectangle 54.8 131.0 106.8 46.6 208 188 104 2 true 208 214 194
+Rectangle 540.0 517.0 122.0 86.0 182 114 155 2 true 94 114 155

@@ -1,0 +1,133 @@
+Please refer to the Youtube video for demonstration.
+https://youtu.be/L-HQ-lrKjQo
+
+*************************************
+Design
+*************************************
+<Class>
+class1:  abstract Shape
+	sub class: Rectangle
+	sub class: Oval
+	sub class: Line
+	sub class: Word
+	sub class: Table
+class2: PPM
+
+<Array List>
+1. for all the Shape
+2. for all the image(PPM)
+
+when user interact with the objects in the graphic pane, program will iterate in those 2 array list to find a object.
+
+<File Format>
+A new file format is to be designed to store both shapes and images, based on whe .ppm file we worked with, a coordinate for each .ppm need to be added
+in the header. I use "P3" as a starting tag of each image, the program will go through the file and once find a "P3", it means a new image.  
+After the program has scaned all the image, there will be a string of "*************" between image data and shapes data.
+To store the shapes data, I just record all the parameter for each shapes, including type, coordinate, width, length, rows, colunms, colors... It can be written at the bottom of the file. some shapes has more complex parameters, such as if a rectangle is solid, it need fill in color;  a line can be strictly horizontal, it need a boolean to identify this. All the shapes data will begin with their name, and followed by all of its parameters. Once program scanned some key words like "Oval", or "Line", it will keep going on to scan the parameter following, and pass these parameter to each's constructor to create a new object of this class. And add this object into array list, so that we can do later interact with all the shapes loaded from the file. 
+
+
+*************************************
+Feature List
+*************************************
+<Diagram Drawing>
+UI Interface
+-designed an icon for each tool, it’s showing on the top of the graphic pane
+-each icon has a highlight indicator when clicked
+-5 kinds of objects can draw: line, rectangle, oval, table, and string
+-a color palette is showing the current global color for every tool
+-color palette can real time change when user drags the RGB sliders 
+-R/G/B sliders for color configure, and pen size slider for pen configure
+-instruction for each button when activated. 
+-when fill in color to rectangle or oval, the outter frame will remain.
+
+Drag and Rotate Button
+-all shapes can move smoothly, following user’s mouse
+-all shapes (except line) can keep inside the drawing area when user try to move them out of boundary
+-if several shapes are overlapping, when one shape is activated, it goes to the top layer
+-dragging an object over other objects, the other ones will not be affected.
+-if multiple objects overlapping, clicking at the overlapping area, only the latest one will response user’s operation.
+-shapes can transform between horizontal and vertical on mouse click (apply on a rectangle, oval)
+-image can rotate clockwise for 90 degrees on mouse click
+
+Invert Button
+-images can invert color on mouse click.
+
+Formation Button
+- can help to format a set of selected shapes to the average size and line up (apply to rectangles, ovals and tables)
+- word will only line up, won’t change font size
+
+Delete Button
+-objects can be deleted from the database.
+
+Right Angle Line Button
+-draw a strictly horizontal or vertical line, based on mouse move, automatically determined by the program.
+-If a line is draw with this function, it will keep strictly horizontal or vertical after save and reload.
+
+<Save and Load>
+-all objects can be saved into one file
+-each slide page can save to a separate file
+-can load multiple images and edit separately
+
+<Slide Show System>
+-automatically generate a new file in the slide folder when creating a new slide 
+-first page and last page reminding
+-press “space” or “right” on the keyboard to go next page, press “left” to go back to previous page.
+-can add new page whenever, this new page will be added in the bottom
+-can modify each page while browsing.
+-after entering slide mode, a page number will appear on the top right, indicates the current page user is browsing. 
+- “Save slide page” button will save the current slide page to it’s own file. If it’s not in slide mode, this button will let user choose a path and filename to save.
+
+More features to be discovered…
+
+
+*************************************
+Experience
+*************************************
+In this project, my partner is Shu Zhang.
+During the high-level design discussion, we had an overall solution, in this project the main challenge is that how can we save the shapes and the images into one file. I worked out some solutions, each have its pros and cons, we need to analyze them, and make a decision. After chose the solution, need to build the architecture, how many classes and array lists will be created, how the work flow will go. we wrote down all the challenge on the paper, and all the solution in other paper, after that we can evaluate which solution is necessary, which solution is the best, and also evaluate if all the challenges can be covered, sometimes some challenge will no longer exist as our discussion goes on. 
+
+Pair programming is a very good way to learn together, we can follow each other's mind and thinking, and discover some simple mistakes more clearly. I can see how she translates human's idea into programming language. During pair programming, I can share to her not only the design, the solution, but also some very small and detailed techniques, such as some hot key Eclipse provides, which is very efficient for writing code. Working alone can be more concentrated, and can be more creative, most of my special design came into my mind when I was alone. But it’s also easier to be trapped in fixed thinking, and more difficult to address a bug. Addressing a bug also takes a lot of time.
+
+
+
+*************************************
+Bug Fix History (Major)
+*************************************
+-fixed the issue when 2 objects are overlapping, and user drag away the one on top, the remain one will be partly erased .
+-fixed the issue when a .ppm image lost pixels after being dragged and rotated.
+-fixed the issue that if a shape is created eariler, it will always stay on the bottom layer.
+-fixed the issue that when in slide mode, objects in one page may saved to other page's file.
+-fixed the issue that a line can not be deleted.
+-fixed the issue that loading a diagram file, exception is thrown: input mismatch.
+-fixed the issue when a oval is vertical, boundary calculation error, can't be moved correctly.
+-fixed the issue when a diagram with word is saved and reloaded, the location of the word will change.
+-fixed the issue after makes any change in the graphic pane, those horizontal and vertical line will no long keep horizontal or vertical.
+-fixed the issue when drag a shape to move over some other shapes, those one it passes by will be affacted.
+-fixed the issue when clicking a image to rotate, the location also moves a little.
+
+Known Bug:
+N/A
+
+*************************************
+References
+*************************************
+I got the the following solution from ChatGPT:
+
+1. I need to count the quantity of files in a folder, so that when running slide mode my program can know which slide is the last one.
+And when create a new page, program will know what file name should give to this new page.
+class DiagramUserInterface
+206	public int countFiles(String path) {
+207		File folder = new File(path);
+208		int count = 0;
+209		File[] files = folder.listFiles();
+210		for (File file : files) {
+211			if (file.isFile()) {
+212				count++;
+213			}
+214		}
+215		return count;
+216	}
+
+All the other ideas, designs and codes are done by myself.
+
+
