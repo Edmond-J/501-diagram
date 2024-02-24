@@ -1,41 +1,48 @@
-# <font color=mediumaquamarine>Tetris </font>
+# <font color=mediumaquamarine>Diagram Editor </font>
 ## Introduction:
-This is a simple Tetris game I built for fun. Just to practice the use of KeyFrame, TimeLine and enum class in JavaFX.  
-It's incompleted, blocks can not be cleared and no collision detection.  
+After a month of learning Java, we were tasked with creating a diagram editor capable of editing basic shapes and PPM images within four days using the knowledge we had acquired.
 
-Find the executable application (number_guessing-fx.exe) from Google Drive:  
-[Edmond's Java Program Collection.zip (Windows)](https://drive.google.com/file/d/1ve7sEscvtVldRKZU-B3VhaQdORteksQk/view?usp=drive_link)
+Please check the YouTube video to see the functionalities I implemented:  
+[**Video Demonstration**](https://youtu.be/L-HQ-lrKjQo)  
+
+The graphical interface development was facilitated using the basic instructional library provided by the school, known as ecs100.jar. This library offers a canvas for drawing graphics, images, and text strings. Additionally, it provides functionality for responding to mouse events. Leveraging these features, I manually implemented a range of underlying GUI functionalities including element layout, button clicks, screen refresh and more.
+
+Find the executable application (diagram.exe) from Google Drive:  
+[**Edmond's Java Program Collection.zip (Windows)**](https://drive.google.com/drive/folders/1ovLlyHeENMtQDsT5b9hJBcHwKPCrC6Mg?usp=sharing)  
 
 ## Snapshot
-<img src="screenshot/ui-1.png" width="200px"> 
-
-## Hot Keys
-**Left/Right**: move left or right  
-**Space**: rotate  
-**Down**: drop instantly
+<img src="screenshot/ui-1.png" width="700px"> 
 
 ## Features
-- Blocks rotate in clockwise
-- Foldable setting panel.
+- Graphic creation and editing
+- Invert, move, rotate, format, delete
+- Customizable colors
+- Built-in buttons on the canvas
+- Support for border color and fill color
+- Objects follow the mouse when moved
+- Objects are confined to the canvas when moved
+- Support for Z-axis stacking
+- Import and edit PPM files
+- Diagram saving and loading
+- Browse in slide mode
+- Create and edit slides
 
-## Tech Stack 
-| Type | Name |
-| ----------- | ----------- 
-| Programming Language | Java |
-| GUI Library | Java FX |
-| GUI Tool | Scene Builder|
+## Knowledge & Skills
+- abstract class and inherit
+- object and field method override
+- file I/O
+- underlying logic of GUI programs
+- modifying image files at the pixel level using loops and arrays.
 
 ## Run Instruction
 ### Requirement:
 - Java Runtime Environment
-- Java FX
+
 ### Steps:   
-To run the application in your local machine, please follow the steps below:
-1. Clone the repository from the github  
-2. Add JavaFX to Build Path
-3. Add the VM argrements to the run configure:  
-`--module-path "<PATH TO YOUR JavaFX/lib>" --add-modules javafx.controls,javafx.fxml`
-4. Run the *TetrisFx_Main.java* in the *application* package.
+To run the source code in development environment, please follow the steps below:
+1. Clone the repository from the GitHub
+2. Add ecs100.jar to Build Path
+3. Run the *Diagram_Main.java* in the default package.
 
 ## License
 MIT
